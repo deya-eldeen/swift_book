@@ -123,6 +123,7 @@
 				28BC1A851EC4915E0019527B /* Swift_POP */,
 				E36BFE35231939230028C406 /* Swift_Design_Patterns */,
 				E32E5AD120DD1998008B27CD /* BOB */,
+				B0C60DD72614E467000140E8 /* RXswift */,
 				281429FA1E37B71E0044EF48 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,7 +139,7 @@
 		281429FB1E37B71E0044EF48 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				28BC1A6D1EC48E2C0019527B /* ch01_aboutSwift.swift */,
+				B0C60DD2261480B5000140E8 /* Chapter_00 */,
 				28BC1A6E1EC48E2C0019527B /* ch02_aSwiftTour.swift */,
 				28BC1A6F1EC48E2C0019527B /* ch03_TheBasics.swift */,
 				28BC1A701EC48E2C0019527B /* ch04_BasicOperators.swift */,
@@ -187,6 +188,21 @@
 			);
 			name = Swift_POP;
 			path = swiftBook;
+			sourceTree = "<group>";
+		};
+		B0C60DD2261480B5000140E8 /* Chapter_00 */ = {
+			isa = PBXGroup;
+			children = (
+				28BC1A6D1EC48E2C0019527B /* ch01_aboutSwift.swift */,
+			);
+			path = Chapter_00;
+			sourceTree = "<group>";
+		};
+		B0C60DD72614E467000140E8 /* RXswift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RXswift;
 			sourceTree = "<group>";
 		};
 		E32E5AD120DD1998008B27CD /* BOB */ = {
