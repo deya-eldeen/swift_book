@@ -1,7 +1,6 @@
 import Foundation
 
-func _2_ASwiftTour()
-{
+func ASwiftTour() {
     /*
      “You don’t need to import a separate library for functionality like input/output
      or string handling. Code written at global scope is used as the entry point for the program,

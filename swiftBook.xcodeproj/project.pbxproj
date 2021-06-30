@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		281429FD1E37B71E0044EF48 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281429FC1E37B71E0044EF48 /* main.swift */; };
-		28BC1A791EC48E2C0019527B /* ch01_aboutSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A6D1EC48E2C0019527B /* ch01_aboutSwift.swift */; };
-		28BC1A7A1EC48E2C0019527B /* ch02_aSwiftTour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A6E1EC48E2C0019527B /* ch02_aSwiftTour.swift */; };
+		28BC1A791EC48E2C0019527B /* AboutSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A6D1EC48E2C0019527B /* AboutSwift.swift */; };
+		28BC1A7A1EC48E2C0019527B /* ASwiftTour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A6E1EC48E2C0019527B /* ASwiftTour.swift */; };
 		28BC1A7B1EC48E2C0019527B /* ch03_TheBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A6F1EC48E2C0019527B /* ch03_TheBasics.swift */; };
 		28BC1A7C1EC48E2C0019527B /* ch04_BasicOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A701EC48E2C0019527B /* ch04_BasicOperators.swift */; };
 		28BC1A7D1EC48E2C0019527B /* ch05_StringsAndCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A711EC48E2C0019527B /* ch05_StringsAndCharacters.swift */; };
@@ -46,6 +46,9 @@
 		28BC1AB61EC495160019527B /* ch37_SummaryOfTheGrammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A9D1EC495160019527B /* ch37_SummaryOfTheGrammer.swift */; };
 		28BC1AB71EC495160019527B /* ch38_DocumentRevisionHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A9E1EC495160019527B /* ch38_DocumentRevisionHistory.swift */; };
 		28F1528D1ECCB0130043B94C /* ch10_Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F1528C1ECCB0130043B94C /* ch10_Enumerations.swift */; };
+		B04E1443268C537300B9934E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04E1442268C537300B9934E /* Enums.swift */; };
+		B0C60DDB2615BA08000140E8 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C60DDA2615BA08000140E8 /* Misc.swift */; };
+		B0E92EF526724F4900F12363 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E92EF426724F4900F12363 /* DependencyInjection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,8 +66,8 @@
 /* Begin PBXFileReference section */
 		281429F91E37B71E0044EF48 /* swiftBook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftBook; sourceTree = BUILT_PRODUCTS_DIR; };
 		281429FC1E37B71E0044EF48 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = swiftBook/main.swift; sourceTree = "<group>"; };
-		28BC1A6D1EC48E2C0019527B /* ch01_aboutSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch01_aboutSwift.swift; sourceTree = "<group>"; };
-		28BC1A6E1EC48E2C0019527B /* ch02_aSwiftTour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch02_aSwiftTour.swift; sourceTree = "<group>"; };
+		28BC1A6D1EC48E2C0019527B /* AboutSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutSwift.swift; sourceTree = "<group>"; };
+		28BC1A6E1EC48E2C0019527B /* ASwiftTour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASwiftTour.swift; sourceTree = "<group>"; };
 		28BC1A6F1EC48E2C0019527B /* ch03_TheBasics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch03_TheBasics.swift; sourceTree = "<group>"; };
 		28BC1A701EC48E2C0019527B /* ch04_BasicOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch04_BasicOperators.swift; sourceTree = "<group>"; };
 		28BC1A711EC48E2C0019527B /* ch05_StringsAndCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch05_StringsAndCharacters.swift; sourceTree = "<group>"; };
@@ -101,6 +104,9 @@
 		28BC1A9D1EC495160019527B /* ch37_SummaryOfTheGrammer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch37_SummaryOfTheGrammer.swift; sourceTree = "<group>"; };
 		28BC1A9E1EC495160019527B /* ch38_DocumentRevisionHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch38_DocumentRevisionHistory.swift; sourceTree = "<group>"; };
 		28F1528C1ECCB0130043B94C /* ch10_Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ch10_Enumerations.swift; sourceTree = "<group>"; };
+		B04E1442268C537300B9934E /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		B0C60DDA2615BA08000140E8 /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		B0E92EF426724F4900F12363 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				B0C60DD2261480B5000140E8 /* Chapter_00 */,
-				28BC1A6E1EC48E2C0019527B /* ch02_aSwiftTour.swift */,
+				B049FA4926249C7000EF1BA5 /* Chapter_01 */,
+				B0C60DD92615B9FB000140E8 /* Misc */,
 				28BC1A6F1EC48E2C0019527B /* ch03_TheBasics.swift */,
 				28BC1A701EC48E2C0019527B /* ch04_BasicOperators.swift */,
 				28BC1A711EC48E2C0019527B /* ch05_StringsAndCharacters.swift */,
@@ -190,10 +197,18 @@
 			path = swiftBook;
 			sourceTree = "<group>";
 		};
+		B049FA4926249C7000EF1BA5 /* Chapter_01 */ = {
+			isa = PBXGroup;
+			children = (
+				28BC1A6E1EC48E2C0019527B /* ASwiftTour.swift */,
+			);
+			path = Chapter_01;
+			sourceTree = "<group>";
+		};
 		B0C60DD2261480B5000140E8 /* Chapter_00 */ = {
 			isa = PBXGroup;
 			children = (
-				28BC1A6D1EC48E2C0019527B /* ch01_aboutSwift.swift */,
+				28BC1A6D1EC48E2C0019527B /* AboutSwift.swift */,
 			);
 			path = Chapter_00;
 			sourceTree = "<group>";
@@ -203,6 +218,16 @@
 			children = (
 			);
 			path = RXswift;
+			sourceTree = "<group>";
+		};
+		B0C60DD92615B9FB000140E8 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				B0C60DDA2615BA08000140E8 /* Misc.swift */,
+				B04E1442268C537300B9934E /* Enums.swift */,
+				B0E92EF426724F4900F12363 /* DependencyInjection.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		E32E5AD120DD1998008B27CD /* BOB */ = {
@@ -289,11 +314,12 @@
 				28F1528D1ECCB0130043B94C /* ch10_Enumerations.swift in Sources */,
 				281429FD1E37B71E0044EF48 /* main.swift in Sources */,
 				28BC1AB01EC495160019527B /* ch31_Expressions.swift in Sources */,
+				B04E1443268C537300B9934E /* Enums.swift in Sources */,
 				28BC1AB41EC495160019527B /* ch35_Patterns.swift in Sources */,
 				28BC1AAD1EC495160019527B /* ch28_AboutTheLanguageReference.swift in Sources */,
 				28BC1A9F1EC495160019527B /* ch14_Subscripts.swift in Sources */,
-				28BC1A791EC48E2C0019527B /* ch01_aboutSwift.swift in Sources */,
-				28BC1A7A1EC48E2C0019527B /* ch02_aSwiftTour.swift in Sources */,
+				28BC1A791EC48E2C0019527B /* AboutSwift.swift in Sources */,
+				28BC1A7A1EC48E2C0019527B /* ASwiftTour.swift in Sources */,
 				28BC1A7B1EC48E2C0019527B /* ch03_TheBasics.swift in Sources */,
 				28BC1A841EC48E2C0019527B /* ch13_Methods.swift in Sources */,
 				28BC1AA81EC495160019527B /* ch23_Extensions.swift in Sources */,
@@ -318,9 +344,11 @@
 				28BC1A821EC48E2C0019527B /* ch11_ClassesAndStructures.swift in Sources */,
 				28BC1AA61EC495160019527B /* ch21_TypeCasting.swift in Sources */,
 				28BC1AB61EC495160019527B /* ch37_SummaryOfTheGrammer.swift in Sources */,
+				B0C60DDB2615BA08000140E8 /* Misc.swift in Sources */,
 				28BC1AA41EC495160019527B /* ch19_OptionalChaining.swift in Sources */,
 				28BC1AA01EC495160019527B /* ch15_Inheritance.swift in Sources */,
 				28BC1AA51EC495160019527B /* ch20_ErrorHandling.swift in Sources */,
+				B0E92EF526724F4900F12363 /* DependencyInjection.swift in Sources */,
 				28BC1AB71EC495160019527B /* ch38_DocumentRevisionHistory.swift in Sources */,
 				28BC1AA91EC495160019527B /* ch24_Protocols.swift in Sources */,
 				28BC1A7D1EC48E2C0019527B /* ch05_StringsAndCharacters.swift in Sources */,
