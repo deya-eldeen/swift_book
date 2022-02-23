@@ -1,10 +1,10 @@
-//
-//  Enums.swift
-//  swiftBook
-//
-//  Created by Deya AlDeen on 30/06/2021.
-//  Copyright © 2021 DeyaEldeen. All rights reserved.
-//
+import Foundation
+
+func _10_Enumerations()
+{
+    
+}
+
 
 import Foundation
 
