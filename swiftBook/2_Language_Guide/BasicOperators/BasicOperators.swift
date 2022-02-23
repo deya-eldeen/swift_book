@@ -1,8 +1,8 @@
 
 import Foundation
 
-func _4_BasicOperators()
-{
+func BasicOperators() {
+    
     let (x, y) = (1, 2)
     
     print(9 % 4)    // equals 1

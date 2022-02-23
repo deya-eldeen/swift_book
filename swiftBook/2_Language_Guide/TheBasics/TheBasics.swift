@@ -1,7 +1,7 @@
 import Foundation
 
-func _3_TheBasics()
-{
+func _3_TheBasics() {
+     
      /*
      
      Swift introduces advanced types not found in Objective-C, such as tuples.
