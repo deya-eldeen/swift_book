@@ -135,6 +135,8 @@ func _3_TheBasics() {
     
     // Optionals
     
+    // You use optionals in situations where a value may be absent. An optional represents two possibilities: Either there is a value, and you can unwrap the optional to access that value, or there isn’t a value at all.
+    
     let possibleNumber = "123"
     let convertedNumber = Int(possibleNumber)
     // convertedNumber is inferred to be of type "Int?", or "optional Int
@@ -304,7 +306,8 @@ func _3_TheBasics() {
     
     
     
-    
+
+
     
     // Error Handeling
     
@@ -338,4 +341,16 @@ func _3_TheBasics() {
     
     
     
+    // The difference between assertions and preconditions is in when they’re checked: Assertions are checked only in debug builds, but preconditions are checked in both debug and production builds. In production builds, the condition inside an assertion isn’t evaluated. This means you can use as many assertions as you want during your development process, without impacting performance in production.
+
+    
+    
+    
+    
+    /////////////////////////////////////
+    ///
+    ///
+    ///
+    
+
 }

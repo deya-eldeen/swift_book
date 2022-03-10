@@ -1,11 +1,6 @@
 import Foundation
 
-
-Enums().printHealthCases()
-
-// classStruct()
-
-//_01_ControlFlow()
+sets_example_1()
 
 /*
 _01_aboutSwift

@@ -187,6 +187,19 @@ func ASwiftTour() {
     
     // tuples
     
+    //Use a tuple to make a compound value
+    
+    
+    // Functions are a first-class type. This means that a function can return another function as its value.
+    
+
+    
+    // Functions are actually a special case of closures
+    
+    // Closures: blocks of code that can be called later
+    
+    // When a closure is the only argument to a function, you can omit the parentheses entirely.
+    
     var origin = (x: 0, y: 0)
     
     var point = origin
@@ -317,9 +330,44 @@ func ASwiftTour() {
     
     // setter & getter
     
+//    Every property needs a value assigned—either in its declaration (as with numberOfSides) or in the initializer (as with name).
+
+
+    //In addition to simple properties that are stored, properties can have a getter and a setter.
+
+
+//    var perimeter: Double {
+//        get {
+//            return 3.0 * sideLength
+//        }
+//        set {
+//            sideLength = newValue / 3.0
+//        }
+//    }
+//
     
     
-    
+    class EquilateralTriangle {
+        var sideLength: Double = 0.0
+
+        var perimeter: Double {
+            get {
+                return 3.0 * sideLength
+            }
+            set (zazu) {
+                sideLength = zazu / 3.0
+            }
+        }
+
+    }
+
+    var triangle = EquilateralTriangle()
+    print(triangle.perimeter)
+    // Prints "9.3"
+    triangle.perimeter = 9.9
+    print(triangle.sideLength)
+    // Prints "3.3000000000000003"
+
     
     // enums and structres
     
@@ -365,6 +413,28 @@ func ASwiftTour() {
     }
     let hearts = Suit.hearts
     let heartsDescription = hearts.simpleDescription()
+    
+    
+    
+    //You can think of the associated values as behaving like stored properties of the enumeration case instance.
+    
+    enum ServerResponse {
+        case result(String, String)
+        case failure(String)
+    }
+
+    let success = ServerResponse.result("6:00 am", "8:09 pm")
+    let failure = ServerResponse.failure("Out of cheese.")
+
+    switch success {
+    case let .result(sunrise, sunset):
+        print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
+    case let .failure(message):
+        print("Failure...  \(message)")
+    }
+    // Prints "Sunrise is at 6:00 am and sunset is at 8:09 pm."
+    
+    
     
     // structs
     
@@ -420,15 +490,157 @@ func ASwiftTour() {
     
     let threeOfSpades = Card(rank: .three, suit: .spades)
     let threeOfSpadesDescription = threeOfSpades.simpleDescription()
-    
-    // swift 3 book has other content like
-    
+        
     // protocols and extensions
+    
+    
+//    protocol ExampleProtocol {
+//        var simpleDescription: String { get }
+//        mutating func adjust()
+//    }
+//
+    
+// Classes, enumerations, and structs can all adopt protocols.
+
+
+//    class SimpleClass: ExampleProtocol {
+//        var simpleDescription: String = "A very simple class."
+//        var anotherProperty: Int = 69105
+//        func adjust() {
+//            simpleDescription += "  Now 100% adjusted."
+//        }
+//    }
+//    var a = SimpleClass()
+//    a.adjust()
+//    let aDescription = a.simpleDescription
+//
+//    struct SimpleStructure: ExampleProtocol {
+//        var simpleDescription: String = "A simple structure"
+//        mutating func adjust() {
+//            simpleDescription += " (adjusted)"
+//        }
+//    }
+//    var b = SimpleStructure()
+//    b.adjust()
+//    let bDescription = b.simpleDescription
+
+//    protocol ExampleProtocol {
+//        var simpleDescription: String { get }
+//        mutating func adjust()
+//    }
+//
+//    enum ExampleEnum : ExampleProtocol {
+//        case Base, Adjusted
+//
+//        var simpleDescription: String {
+//            return self.getDescription()
+//        }
+//
+//        func getDescription() -> String {
+//            switch self {
+//            case .Base:
+//                return "A simple description of enum"
+//            case .Adjusted:
+//                return "Adjusted description of enum"
+//            }
+//        }
+//
+//        mutating func adjust() {
+//            self = ExampleEnum.Adjusted
+//        }
+//    }
+//
+//    var c = ExampleEnum.Base
+//    c.adjust()
+//    let cDescription = c.simpleDescription
+    
     
     // error handling
     
-    // generics
+    enum PrinterError: Error {
+        case outOfPaper
+        case noToner
+        case onFire
+    }
     
+    func send(job: Int, toPrinter printerName: String) throws -> String {
+        if printerName == "Never Has Toner" {
+            throw PrinterError.noToner
+        }
+        return "Job sent"
+    }
+    
+    do {
+        let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
+        print(printerResponse)
+    } catch {
+        print(error)
+    }
+    // Prints "Job sent"
+    
+    // Another way to handle errors is to use try? to convert the result to an optional. If the function throws an error, the specific error is discarded and the result is nil. Otherwise, the result is an optional containing the value that the function returned.
+
+    let printerSuccess = try? send(job: 1884, toPrinter: "Mergenthaler")
+
+    // Use defer to write a block of code that’s executed after all other code in the function, just before the function returns. The code is executed regardless of whether the function throws an error. You can use defer to write setup and cleanup code next to each other, even though they need to be executed at different times.
+    
+    
+    var fridgeIsOpen = false
+    let fridgeContent = ["milk", "eggs", "leftovers"]
+
+    func fridgeContains(_ food: String) -> Bool {
+        fridgeIsOpen = true
+        defer {
+            fridgeIsOpen = false
+        }
+
+        let result = fridgeContent.contains(food)
+        return result
+    }
+    fridgeContains("banana")
+    print(fridgeIsOpen)
+    // Prints "false"
+    
+    
+    // Generics
+    
+    // Write a name inside angle brackets to make a generic function or type.
+    
+
+    
+    enum OptionalValue<Wrapped> {
+        case none
+        case some(Wrapped)
+    }
+    
+    var possibleInteger: OptionalValue<Int> = .none
+    possibleInteger = .some(100)
+    
+    
+    //
+
+    // Use "where" right before the body to specify a list of requirements—for example, to require the type to implement a protocol, to require two types to be the same, or to require a class to have a particular superclass.
+
+
+    
+    func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool where T.Element: Equatable, T.Element == U.Element {
+        for lhsItem in lhs {
+            for rhsItem in rhs {
+                if lhsItem == rhsItem {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    anyCommonElements([1, 2, 3], [3.9])
+
+    
+    
+    
+    // Writing <T: Equatable> is the same as writing <T> ... where T: Equatable.
+    
+
     
     
 }

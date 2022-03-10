@@ -51,6 +51,8 @@
 		E302966127C6263100D899BD /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E302966027C6263100D899BD /* Concurrency.swift */; };
 		E302967A27C62D4B00D899BD /* OpaqueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E302967927C62D4B00D899BD /* OpaqueTypes.swift */; };
 		E302967C27C62D5600D899BD /* MemorySafety.swift in Sources */ = {isa = PBXBuildFile; fileRef = E302967B27C62D5600D899BD /* MemorySafety.swift */; };
+		E318B7A427D6477F00C50252 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E318B7A327D6477F00C50252 /* Sets.swift */; };
+		E369AE7327CBC3E3005A386E /* Bitwise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369AE7227CBC3E3005A386E /* Bitwise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -111,6 +113,8 @@
 		E302966027C6263100D899BD /* Concurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency.swift; sourceTree = "<group>"; };
 		E302967927C62D4B00D899BD /* OpaqueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueTypes.swift; sourceTree = "<group>"; };
 		E302967B27C62D5600D899BD /* MemorySafety.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafety.swift; sourceTree = "<group>"; };
+		E318B7A327D6477F00C50252 /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
+		E369AE7227CBC3E3005A386E /* Bitwise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitwise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,8 @@
 			children = (
 				B0C60DDA2615BA08000140E8 /* Misc.swift */,
 				B0E92EF426724F4900F12363 /* DependencyInjection.swift */,
+				E369AE7227CBC3E3005A386E /* Bitwise.swift */,
+				E318B7A327D6477F00C50252 /* Sets.swift */,
 			);
 			path = 0_Misc;
 			sourceTree = "<group>";
@@ -680,11 +686,13 @@
 				28BC1AB31EC495160019527B /* Attributes.swift in Sources */,
 				28BC1A7F1EC48E2C0019527B /* ControlFlow.swift in Sources */,
 				28BC1AB11EC495160019527B /* Statements.swift in Sources */,
+				E369AE7327CBC3E3005A386E /* Bitwise.swift in Sources */,
 				28BC1AB51EC495160019527B /* GenericParamsAndArgs.swift in Sources */,
 				28BC1AAE1EC495160019527B /* LexicalStructure.swift in Sources */,
 				E302967C27C62D5600D899BD /* MemorySafety.swift in Sources */,
 				28BC1A831EC48E2C0019527B /* Properties.swift in Sources */,
 				28BC1A801EC48E2C0019527B /* Functions.swift in Sources */,
+				E318B7A427D6477F00C50252 /* Sets.swift in Sources */,
 				28BC1A821EC48E2C0019527B /* StructuresAndClasses.swift in Sources */,
 				E302964927C6238500D899BD /* VersionCompatibility.swift in Sources */,
 				28BC1AA61EC495160019527B /* TypeCasting.swift in Sources */,
