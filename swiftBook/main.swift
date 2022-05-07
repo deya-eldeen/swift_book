@@ -1,7 +1,5 @@
 import Foundation
 
-sets_example_1()
-
 /*
 _01_aboutSwift
 _02_ASwiftTour
