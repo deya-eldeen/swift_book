@@ -1,5 +1,8 @@
 import Foundation
 
+Leet_1()
+
+
 /*
 _01_aboutSwift
 _02_ASwiftTour

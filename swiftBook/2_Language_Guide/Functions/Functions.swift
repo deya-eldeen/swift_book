@@ -122,5 +122,10 @@ func _08_Functions() {
     
     //Nested Functions
     
+    func outter() {
+        func inner() {
+            
+        }
+    }
     
 }

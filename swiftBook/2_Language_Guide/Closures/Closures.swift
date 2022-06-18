@@ -118,13 +118,6 @@ func _09_Closures() {
     // strings is inferred to be of type [String]
     // its value is ["OneSix", "FiveEight", "FiveOneZero"]
     
-    
-    
-    
-    
-    
-    
-    
     // 🟩 Capturing Values
     
     func makeIncrementer(forIncrement amount: Int) -> () -> Int {
