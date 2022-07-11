@@ -55,6 +55,7 @@
 		E330D1FA2858F681000CF2E5 /* Leet_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330D1F92858F681000CF2E5 /* Leet_1.swift */; };
 		E339852027DF6FCD003DB6C4 /* Closures2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339851F27DF6FCD003DB6C4 /* Closures2.swift */; };
 		E339852227DF88C9003DB6C4 /* Closures3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339852127DF88C9003DB6C4 /* Closures3.swift */; };
+		E3625633286F7CED00873C95 /* Properties_Example_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3625632286F7CED00873C95 /* Properties_Example_1.swift */; };
 		E369AE7327CBC3E3005A386E /* Bitwise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E369AE7227CBC3E3005A386E /* Bitwise.swift */; };
 		E3CD444F285BB2EE006B9AB1 /* AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD444E285BB2EE006B9AB1 /* AsyncAwait.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		E339851F27DF6FCD003DB6C4 /* Closures2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures2.swift; sourceTree = "<group>"; };
 		E339852127DF88C9003DB6C4 /* Closures3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures3.swift; sourceTree = "<group>"; };
 		E339852327DF8993003DB6C4 /* Pokemons.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Pokemons.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E3625632286F7CED00873C95 /* Properties_Example_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties_Example_1.swift; sourceTree = "<group>"; };
 		E369AE7227CBC3E3005A386E /* Bitwise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitwise.swift; sourceTree = "<group>"; };
 		E3CD444E285BB2EE006B9AB1 /* AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwait.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				28BC1A771EC48E2C0019527B /* Properties.swift */,
+				E3625632286F7CED00873C95 /* Properties_Example_1.swift */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				28BC1AB11EC495160019527B /* Statements.swift in Sources */,
 				E369AE7327CBC3E3005A386E /* Bitwise.swift in Sources */,
 				28BC1AB51EC495160019527B /* GenericParamsAndArgs.swift in Sources */,
+				E3625633286F7CED00873C95 /* Properties_Example_1.swift in Sources */,
 				28BC1AAE1EC495160019527B /* LexicalStructure.swift in Sources */,
 				E302967C27C62D5600D899BD /* MemorySafety.swift in Sources */,
 				28BC1A831EC48E2C0019527B /* Properties.swift in Sources */,

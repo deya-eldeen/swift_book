@@ -1,6 +1,6 @@
 import Foundation
 
-Leet_1()
+_16_Initialization()
 
 
 /*
