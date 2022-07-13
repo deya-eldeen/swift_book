@@ -497,13 +497,13 @@ func _16_Initialization()
     
 
     
-    class SomeClass3 {
-        let someProperty: SomeType = {
-            // create a default value for someProperty inside this closure
-            // someValue must be of the same type as SomeType
-            return someValue
-        }()
-    }
+//    class SomeClass3 {
+//        let someProperty: SomeType = {
+//            // create a default value for someProperty inside this closure
+//            // someValue must be of the same type as SomeType
+//            return someValue
+//        }()
+//    }
 
     // If you use a closure to initialize a property, remember that the rest of the instance hasn’t yet been initialized at the point that the closure is executed.
     // This means that you can’t access any other property values from within your closure, even if those properties have default values.
