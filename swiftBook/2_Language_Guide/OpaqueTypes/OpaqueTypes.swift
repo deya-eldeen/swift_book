@@ -20,8 +20,6 @@ func _26_OpaqueTypes() {
     // [Differences Between Opaque Types and Protocol Types]
     
     
-    
-    
-    
+
 }
 
