@@ -1,5 +1,5 @@
 
-import UIKit
+import Foundation
 
 // Structures and classes
 
