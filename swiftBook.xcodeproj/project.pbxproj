@@ -45,6 +45,8 @@
 		28BC1AB51EC495160019527B /* GenericParamsAndArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A9C1EC495160019527B /* GenericParamsAndArgs.swift */; };
 		28BC1AB61EC495160019527B /* SummaryOfGrammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC1A9D1EC495160019527B /* SummaryOfGrammer.swift */; };
 		28F1528D1ECCB0130043B94C /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F1528C1ECCB0130043B94C /* Enumerations.swift */; };
+		A756F9A72933FBE700C27DBE /* Concurrency_Azzam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756F9A62933FBE700C27DBE /* Concurrency_Azzam.swift */; };
+		A7C3F0E12930EC5600190712 /* Concurrency2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3F0E02930EC5600190712 /* Concurrency2.swift */; };
 		B0C60DDB2615BA08000140E8 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C60DDA2615BA08000140E8 /* Misc.swift */; };
 		B0E92EF526724F4900F12363 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E92EF426724F4900F12363 /* DependencyInjection.swift */; };
 		E302964927C6238500D899BD /* VersionCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E302964827C6238500D899BD /* VersionCompatibility.swift */; };
@@ -118,6 +120,8 @@
 		28BC1A9C1EC495160019527B /* GenericParamsAndArgs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericParamsAndArgs.swift; sourceTree = "<group>"; };
 		28BC1A9D1EC495160019527B /* SummaryOfGrammer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryOfGrammer.swift; sourceTree = "<group>"; };
 		28F1528C1ECCB0130043B94C /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		A756F9A62933FBE700C27DBE /* Concurrency_Azzam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency_Azzam.swift; sourceTree = "<group>"; };
+		A7C3F0E02930EC5600190712 /* Concurrency2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency2.swift; sourceTree = "<group>"; };
 		B0C60DDA2615BA08000140E8 /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		B0E92EF426724F4900F12363 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		E302964827C6238500D899BD /* VersionCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCompatibility.swift; sourceTree = "<group>"; };
@@ -134,7 +138,6 @@
 		E330D1F92858F681000CF2E5 /* Leet_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leet_1.swift; sourceTree = "<group>"; };
 		E339851F27DF6FCD003DB6C4 /* Closures2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures2.swift; sourceTree = "<group>"; };
 		E339852127DF88C9003DB6C4 /* Closures3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures3.swift; sourceTree = "<group>"; };
-		E339852327DF8993003DB6C4 /* Pokemons.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Pokemons.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E3625632286F7CED00873C95 /* Properties_Example_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties_Example_1.swift; sourceTree = "<group>"; };
 		E369AE7227CBC3E3005A386E /* Bitwise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitwise.swift; sourceTree = "<group>"; };
 		E3B37C5528C9E55A007A29C8 /* Problem_001.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem_001.swift; sourceTree = "<group>"; };
@@ -360,7 +363,6 @@
 			children = (
 				28BC1A751EC48E2C0019527B /* Closures.swift */,
 				E339851F27DF6FCD003DB6C4 /* Closures2.swift */,
-				E339852327DF8993003DB6C4 /* Pokemons.playground */,
 				E339852127DF88C9003DB6C4 /* Closures3.swift */,
 			);
 			path = Closures;
@@ -451,6 +453,8 @@
 			isa = PBXGroup;
 			children = (
 				E302966027C6263100D899BD /* Concurrency.swift */,
+				A7C3F0E02930EC5600190712 /* Concurrency2.swift */,
+				A756F9A62933FBE700C27DBE /* Concurrency_Azzam.swift */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -753,6 +757,7 @@
 				E3B37C5628C9E55A007A29C8 /* Problem_001.swift in Sources */,
 				28BC1AAD1EC495160019527B /* AboutLanguageReference.swift in Sources */,
 				28BC1A9F1EC495160019527B /* Subscripts.swift in Sources */,
+				A756F9A72933FBE700C27DBE /* Concurrency_Azzam.swift in Sources */,
 				E3CD444F285BB2EE006B9AB1 /* AsyncAwait.swift in Sources */,
 				28BC1A791EC48E2C0019527B /* AboutSwift.swift in Sources */,
 				28BC1A7A1EC48E2C0019527B /* ASwiftTour.swift in Sources */,
@@ -781,6 +786,7 @@
 				E369AE7327CBC3E3005A386E /* Bitwise.swift in Sources */,
 				28BC1AB51EC495160019527B /* GenericParamsAndArgs.swift in Sources */,
 				E3625633286F7CED00873C95 /* Properties_Example_1.swift in Sources */,
+				A7C3F0E12930EC5600190712 /* Concurrency2.swift in Sources */,
 				28BC1AAE1EC495160019527B /* LexicalStructure.swift in Sources */,
 				E302967C27C62D5600D899BD /* MemorySafety.swift in Sources */,
 				28BC1A831EC48E2C0019527B /* Properties.swift in Sources */,
@@ -899,6 +905,7 @@
 		28142A011E37B71E0044EF48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -907,6 +914,7 @@
 		28142A021E37B71E0044EF48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};

@@ -1,6 +1,10 @@
 
 import Foundation
 
+func _09_Closures() {
+
+}
+
 // [Closures]
     //Closures are self-contained blocks of functionality that can be passed around and used in your code.
     //Closures in Swift are similar to blocks in C and Objective-C and to lambdas in other programming languages.
@@ -17,9 +21,6 @@ import Foundation
     // - Implicit returns from single-expression closures
     // - Shorthand argument names
     // - Trailing closure syntax
-
-
-
 
 // [Closure Expressions]
 // [The Sorted Method]
@@ -213,3 +214,56 @@ import Foundation
 ////This also means that if you assign a closure to two different constants or variables,
 ////both of those constants or variables refer to the same closure.
 //
+
+// 🟩 [Escaping Closures]
+// A closure is said to escape a function when the closure is passed as an argument to the function, but is called after the function returns. When you declare a function that takes a closure as one of its parameters, you can write @escaping before the parameter’s type to indicate that the closure is allowed to escape.
+
+// An escaping closure that refers to self needs special consideration if self refers to an instance of a class. Capturing self in an escaping closure makes it easy to accidentally create a strong reference cycle.
+                                                                        
+class Closures1 {
+    var completionHandlers: [() -> Void] = []
+
+    func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+        completionHandlers.append(completionHandler)
+    }
+    
+    func run1() {
+        someFunctionWithEscapingClosure() {
+            print("z")
+        }
+        completionHandlers.first?()
+        completionHandlers.first?()
+    }
+
+    //
+    
+    func run2() {
+        func howAreYou(_ responseHandler: @escaping (String) -> Void) {
+            print("Hey, how are you?") // you ask how are you
+          
+            // Simulating how it takes 2 seconds for your friend to answer:
+            // This way you tell the program that the responseHandler is an asynchronous closure and you want it to stay alive even after howAreYou call completes.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                responseHandler("Hi, I'm doing really good.")
+            })
+          
+            print("Responding takes a while...")
+        }
+        howAreYou({ friendResponse in
+            print(friendResponse) // print the response that arrives later
+        })
+    }
+    
+    
+    //
+
+}
+
+//Escaping closures are useful whenever you want the closure to be able to outlive the function’s scope from where you are calling it.
+//
+//A great example is when dealing with network requests.
+
+
+
+
+// 🟩 [Autoclosures]

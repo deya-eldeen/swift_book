@@ -2,7 +2,9 @@ import Foundation
 
 //_19_OptionalChaining()
 
-problem_05_solutions()
+Closures3().demo7()
+
+RunLoop.main.run()
 
 /*
 _01_aboutSwift

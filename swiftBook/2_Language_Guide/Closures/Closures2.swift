@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class SomeClass {
     var x = 10
     let c2 = Closures2()
