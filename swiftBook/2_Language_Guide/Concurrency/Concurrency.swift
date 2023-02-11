@@ -93,12 +93,64 @@ class Concurrency1 {
 // }
 
 // [🔷 Asynchronous Sequences]
+// The listPhotos(inGallery:) function in the previous section asynchronously returns the whole array at once, after all of the array’s elements are ready. Another approach is to wait for one element of the collection at a time using an asynchronous sequence. Here’s what iterating over an asynchronous sequence looks like:
 
+class Concurrency2 {
+    func start() async throws {
+        let handle = FileHandle.standardInput
+        for try await line in handle.bytes.lines {
+            print(line)
+        }
+    }
+}
+
+// Instead of using an ordinary for-in loop, the example above writes for with await after it.
+// Like when you call an asynchronous function or method, writing await indicates a possible suspension point.
+// A for-await-in loop potentially suspends execution at the beginning of each iteration, when it’s waiting for the next element to be available.
+
+// In the same way that you can use your own types in a for-in loop by adding conformance to the Sequence protocol, you can use your own types in a for-await-in loop by adding conformance to the AsyncSequence protocol.
 
 // [🔷 Calling Asynchronous Functions in Parallel]
+
+// Calling an asynchronous function with await runs only one piece of code at a time.
+// While the asynchronous code is running, the caller waits for that code to finish before moving on to run the next line of code.
+// For example, to fetch the first three photos from a gallery, you could await three calls to the downloadPhoto(named:) function as follows:
+
+class Concurrency3 {
+
+    func start() {
+        
+    //  let firstPhoto = await downloadPhoto(named: photoNames[0])
+    //  let secondPhoto = await downloadPhoto(named: photoNames[1])
+    //  let thirdPhoto = await downloadPhoto(named: photoNames[2])
+    //  let photos = [firstPhoto, secondPhoto, thirdPhoto]
+    //  show(photos)
+
+    // This approach has an important drawback: Although the download is asynchronous and lets other work happen while it progresses, only one call to downloadPhoto(named:) runs at a time. Each photo downloads completely before the next one starts downloading. However, there’s no need for these operations to wait—each photo can download independently, or even at the same time.
+
+    // To call an asynchronous function and let it run in parallel with code around it, write async in front of let when you define a constant, and then write await each time you use the constant.
+
+    //  async let firstPhoto = downloadPhoto(named: photoNames[0])
+    //  async let secondPhoto = downloadPhoto(named: photoNames[1])
+    //  async let thirdPhoto = downloadPhoto(named: photoNames[2])
+    //
+    //  let photos = await [firstPhoto, secondPhoto, thirdPhoto]
+    //  show(photos)
+
+    // In this example, all three calls to downloadPhoto(named:) start without waiting for the previous one to complete. If there are enough system resources available, they can run at the same time. None of these function calls are marked with await because the code doesn’t suspend to wait for the function’s result. Instead, execution continues until the line where photos is defined—at that point, the program needs the results from these asynchronous calls, so you write await to pause execution until all three photos finish downloading.
+
+    // You can also mix both of these approaches in the same code.
+
+    }
+        
+}
+
 // [🔷 Tasks and Task Groups]
+
 //  [🔷 Unstructured Concurrency]
 //  [🔷 Task Cancellation]
+
+
 // [🔷 Actors]
 // [🔷 Sendable Types]
 
