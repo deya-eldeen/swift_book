@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+//Memory Safety
+//Understanding Conflicting Access To Memory
+//    Characterstics Of Memory Access
+//Conflicting Access to In-Out Parameters
+//Conflicting Access to self in Methods
+//Conflicting Access to Properties
+//
+//
