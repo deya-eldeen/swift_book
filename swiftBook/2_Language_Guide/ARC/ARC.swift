@@ -238,10 +238,141 @@ func _18_ARC()
     // -----------------------------------------------------------------------------
     // [🔷 Unowned References]
     // -----------------------------------------------------------------------------
+    // Like a weak reference, an unowned reference doesn’t keep a strong hold on the instance it refers to.
+    // Unlike a weak reference, however, an unowned reference is used when the other instance has the same lifetime or a longer lifetime.
+    // You indicate an unowned reference by placing the unowned keyword before a property or variable declaration.
+    // Unlike a weak reference, an unowned reference is expected to always have a value.
+    // As a result, marking a value as unowned doesn’t make it optional, and ARC never sets an unowned reference’s value to nil.
+
+    // Question, any practical example where unowned can solve retain cycle, and weak cannot?
+    
+    //Caution: Use an unowned reference only when you are sure that the reference always refers to an instance that hasn’t been deallocated.
+    //If you try to access the value of an unowned reference after that instance has been deallocated, you’ll get a runtime error.
+
+    //The following example defines two classes, Customer and CreditCard, which model a bank customer and a possible credit card for that customer.
+    //These two classes each store an instance of the other class as a property. This relationship has the potential to create a strong reference cycle.
+    //The relationship between Customer and CreditCard is slightly different from the relationship between Apartment and Person seen in the weak reference example above.
+    //In this data model, a customer may or may not have a credit card, but a credit card will always be associated with a customer.
+    //A CreditCard instance never outlives the Customer that it refers to.
+    
+    //To represent this, the Customer class has an optional card property, but the CreditCard class has an unowned (and non-optional) customer property.
+    //Furthermore, a new CreditCard instance can only be created by passing a number value and a customer instance to a custom CreditCard initializer.
+    //This ensures that a CreditCard instance always has a customer instance associated with it when the CreditCard instance is created.”
+
+    //Because a credit card will always have a customer, you define its customer property as an unowned reference, to avoid a strong reference cycle:
+
+    class Customer {
+        let name: String
+        var card: CreditCard?
+        init(name: String) {
+            self.name = name
+        }
+        deinit { print("\(name) is being deinitialized") }
+    }
+
+    class CreditCard {
+        let number: UInt64
+        unowned let customer: Customer
+        init(number: UInt64, customer: Customer) {
+            self.number = number
+            self.customer = customer
+        }
+        deinit { print("Card #\(number) is being deinitialized") }
+    }
+
+    // The number property of the CreditCard class is defined with a type of UInt64 rather than Int,
+    // to ensure that the number property’s capacity is large enough to store a 16-digit card number on both 32-bit and 64-bit systems.
+
+    //This next code snippet defines an optional Customer variable called johnny88, which will be used to store a reference to a specific customer.
+    //This variable has an initial value of nil, by virtue of being optional:
+    
+    var johnny88: Customer?
+    johnny88 = Customer(name: "John Appleseed")
+    johnny88!.card = CreditCard(number: 1234_5678_9012_3456, customer: johnny88!)
+
+    //You can now create a Customer instance, and use it to initialize and assign a new CreditCard instance as that customer’s card property:
+    
+    johnny88 = nil
+    // Prints "John Appleseed is being deinitialized"
+    // Prints "Card #1234567890123456 is being deinitialized”
+    
+    //The examples above show how to use safe unowned references.
+    //Swift also provides unsafe unowned references for cases where you need to disable runtime safety checks—for example, for performance reasons.
+    //As with all unsafe operations, you take on the responsibility for checking that code for safety.
+    //You indicate an unsafe unowned reference by writing unowned(unsafe).
+    //If you try to access an unsafe unowned reference after the instance that it refers to is deallocated, your program will try to access the memory location where the instance used to be, which is an unsafe operation.
+
+    // RESEARCH, the difference between these
+    class Senjab {
+        unowned let customer: Customer? = nil
+        unowned let customer2: Customer? = nil
+        unowned(safe) let customer3: Customer? = nil
+        unowned(unsafe) let customer4: Customer? = nil
+    }
 
     // -----------------------------------------------------------------------------
     // [🔷 Unowned Optional References]
     // -----------------------------------------------------------------------------
+    
+    //You can mark an optional reference to a class as unowned. In terms of the ARC ownership model, an unowned optional reference and a weak reference can both be used in the same contexts.
+    
+    //The difference is that when you use an unowned optional reference, you’re responsible for making sure it always refers to a valid object or is set to nil.
+    //Here’s an example that keeps track of the courses offered by a particular department at a school:
+
+    class Department {
+        var name: String
+        var courses: [Course]
+        init(name: String) {
+            self.name = name
+            self.courses = []
+        }
+    }
+
+    class Course {
+        var name: String
+        unowned var department: Department
+        unowned var nextCourse: Course?
+        init(name: String, in department: Department) {
+            self.name = name
+            self.department = department
+            self.nextCourse = nil
+        }
+    }
+
+    // Department maintains a strong reference to each course that the department offers.
+    // In the ARC ownership model, a department owns its courses.
+    // Course has two unowned references, one to the department and one to the next course a student should take; a course doesn’t own either of these objects.
+    
+    // the above line explains why the reference type is called unowned !!!!!
+    
+    // Every course is part of some department so the department property isn’t an optional.
+    // However, because some courses don’t have a recommended follow-on course, the nextCourse property is an optional.
+
+    // Here is an example of using these classes
+    let department = Department(name: "Horticulture")
+
+    let intro = Course(name: "Survey of Plants", in: department)
+    let intermediate = Course(name: "Growing Common Herbs", in: department)
+    let advanced = Course(name: "Caring for Tropical Plants", in: department)
+
+    intro.nextCourse = intermediate
+    intermediate.nextCourse = advanced
+    department.courses = [intro, intermediate, advanced]
+
+    //The code above creates a department and its three courses.
+    //The intro and intermediate courses both have a suggested next course stored in their nextCourse property,
+    //which maintains an unowned optional reference to the course a student should take after completing this one.
+
+    //An unowned optional reference doesn’t keep a strong hold on the instance of the class that it wraps, and so it doesn’t prevent ARC from deallocating the instance.
+    //It behaves the same as an unowned reference does under ARC, except that an unowned optional reference can be nil.
+    
+    //Like non-optional unowned references, you’re responsible for ensuring that nextCourse always refers to a course that hasn’t been deallocated.
+    //In this case, for example, when you delete a course from department.courses you also need to remove any references to it that other courses might have.
+
+    //⚠️: The underlying type of an optional value is Optional, which is an enumeration in the Swift standard library.
+    //⚠️: However, optionals are an exception to the rule that value types can’t be marked with unowned.
+    
+    //The optional that wraps the class doesn’t use reference counting, so you don’t need to maintain a strong reference to the optional.
 
     // -----------------------------------------------------------------------------
     // [🔷 Unowned References and Implicitly Unwrapped Optional Properties]
