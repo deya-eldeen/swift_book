@@ -166,8 +166,81 @@ func _18_ARC()
     // [🔷 Resolving Strong Reference Cycles Between Class Instances]
     // -----------------------------------------------------------------------------
 
+/*
+ Swift provides two ways to resolve strong reference cycles when you work with properties of class type: weak references and unowned references.
+ Weak and unowned references enable one instance in a reference cycle to refer to the other instance without keeping a strong hold on it.
+ The instances can then refer to each other without creating a strong reference cycle.
+
+ Use a weak reference when the other instance has a shorter lifetime—that is, when the other instance can be deallocated first.
+ In the Apartment example above, it’s appropriate for an apartment to be able to have no tenant at some point in its lifetime, and so
+ a weak reference is an appropriate way to break the reference cycle in this case.
+
+ In contrast, use an unowned reference when the other instance has the same lifetime or a longer lifetime.
+
+ */
     // -----------------------------------------------------------------------------
     // [🔷 Weak References]
+    // -----------------------------------------------------------------------------
+
+    /*
+      A weak reference is a reference that doesn’t keep a strong hold on the instance it refers to, and so doesn’t stop ARC from disposing of the referenced instance.
+     
+      This behavior prevents the reference from becoming part of a strong reference cycle.
+     
+      You indicate a weak reference by placing the weak keyword before a property or variable declaration.
+     
+      Because a weak reference doesn’t keep a strong hold on the instance it refers to, it’s possible for that instance to be deallocated while the weak reference is still referring to it.
+     
+     
+      Therefore, ARC automatically sets a weak reference to nil when the instance that it refers to is deallocated.
+      // SideNote: By using weak references, you can break the strong reference cycle and allow the objects involved to be deallocated when they are no longer needed.
+      
+      Note: weak can only be used with var, not with let, this is why...
+
+      And, because weak references need to allow their value to be changed to nil at runtime, they’re always declared as variables, rather than constants, of an optional type.
+      You can check for the existence of a value in the weak reference, just like any other optional value, and you will never end up with a reference to an invalid instance that no longer exists.
+    */
+    
+    // NOTE: Property observers (didset, willset,...) aren’t called when ARC sets a weak reference to nil.
+
+    // The example below is identical to the Person and Apartment example from above, with one important difference.
+    // This time around, the Apartment type’s tenant property is declared as a weak reference:
+
+    class Person13 {
+        let name: String
+        init(name: String) { self.name = name }
+        var apartment: Apartment13?
+        deinit { print("\(name) is being deinitialized") }
+    }
+
+    class Apartment13 {
+        let unit: String
+        init(unit: String) { self.unit = unit }
+        weak var tenant: Person13?
+        deinit { print("Apartment \(unit) is being deinitialized") }
+    }
+
+    var john13: Person13?
+    var unit4AB: Apartment13?
+
+    john13 = Person13(name: "John Appleseed")
+    unit4AB = Apartment13(unit: "4A")
+
+    john13!.apartment = unit4AB
+    unit4AB!.tenant = john13
+
+    john = nil
+    // Prints "John Appleseed is being deinitialized”
+
+    unit4A = nil
+    // Prints "Apartment 4A is being deinitialized”
+
+    // -----------------------------------------------------------------------------
+    // [🔷 Unowned References]
+    // -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // [🔷 Unowned Optional References]
     // -----------------------------------------------------------------------------
 
     // -----------------------------------------------------------------------------
@@ -186,6 +259,11 @@ func _18_ARC()
     // [🔷 Defining A Capture List]
     // -----------------------------------------------------------------------------
 
+    // -----------------------------------------------------------------------------
+    // [🔷 Weak and unowned references]
+    // -----------------------------------------------------------------------------
+
+    
 }
 
 
