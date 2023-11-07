@@ -136,8 +136,10 @@ func _16_Initialization()
     
     // [Two-Phase Initialization]
     
-    // Class initialization in Swift is a two-phase process. In the first phase, each stored property is assigned an initial value by the class that introduced it. Once the initial state for every stored property has been determined, the second phase begins, and each class is given the opportunity to customize its stored properties further before the new instance is considered ready for use.
-    // The use of a two-phase initialization process makes initialization safe, while still giving complete flexibility to each class in a class hierarchy. Two-phase initialization prevents property values from being accessed before they’re initialized, and prevents property values from being set to a different value by another initializer unexpectedly.
+    // Class initialization in Swift is a two-phase process. In the first phase, each stored property is assigned an (initial value by the class that introduced it).
+    // Once the initial state for every stored property has been determined, the second phase begins, and (each class is given the opportunity to customize its stored properties further before the new instance is considered ready for use).
+    // The use of a two-phase initialization process makes initialization safe, while still giving complete flexibility to each class in a class hierarchy.
+    // Two-phase initialization prevents property values from being accessed before they’re initialized, and prevents property values from being set to a different value by another initializer unexpectedly.
     
     // Swift’s two-phase initialization process is similar to initialization in Objective-C.
     // The main difference is that during phase 1, Objective-C assigns zero or null values (such as 0 or nil) to every property.
