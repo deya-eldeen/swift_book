@@ -195,6 +195,7 @@ func _26_AccessControl() {
     // -----------------------------------------------------------------------------
     // [🔷 Enumeration Types]
     // -----------------------------------------------------------------------------
+    
     // The individual cases of an enumeration automatically receive the same access level as the enumeration they belong to.
     // You can’t specify a different access level for individual enumeration cases.
     // In the example below, the CompassPoint enumeration has an explicit access level of public.
@@ -225,6 +226,7 @@ func _26_AccessControl() {
     // A subclass can’t have a higher access level than its superclass—for example, you can’t write a public subclass of an internal superclass.
     // In addition, for classes that are defined in the same module,
     // you can override any class member (method, property, initializer, or subscript) that’s visible in a certain access context.
+    
     // For classes that are defined in another module, you can override any open class member.
     // An override can make an inherited class member more accessible than its superclass version.
     // In the example below, class A is a public class with a file-private method called someMethod().
@@ -275,12 +277,17 @@ func _26_AccessControl() {
     // You assign a lower access level by writing fileprivate(set), private(set),
     // or internal(set) before the var or subscript introducer.
 
+    // I must have some practical examples with fileprivate(set), private(set) and internal(set).
+
     // This rule applies to stored properties as well as computed properties.
     // Even though you don’t write an explicit getter and setter for a stored property,
     // Swift still synthesizes an implicit getter and setter for you to provide access to the stored property’s backing storage.
+    
     // Use fileprivate(set), private(set), and internal(set) to change the access level of this synthesized setter
     // in exactly the same way as for an explicit setter in a computed property.
 
+    // I must read about synthesized setters in swift!
+    
     // The example below defines a structure called TrackedString, which keeps track of the number of times a string property is modified:
 
     //    struct TrackedString {
@@ -295,13 +302,16 @@ func _26_AccessControl() {
     // The TrackedString structure defines a stored string property called value,
     // with an initial value of "" (an empty string). The structure also defines a stored integer property called numberOfEdits,
     // which is used to track the number of times that value is modified.
+    
     // This modification tracking is implemented with a didSet property observer on the value property,
     // which increments numberOfEdits every time the value property is set to a new value.
     // The TrackedString structure and the value property don’t provide an explicit access-level modifier,
     // and so they both receive the default access level of internal. However,
+    
     // the access level for the numberOfEdits property is marked with a private(set) modifier to indicate that the property’s getter still has the default access level of internal,
     // but the property is settable only from within code that’s part of the TrackedString structure.
     // This enables TrackedString to modify the numberOfEdits property internally,
+    
     // but to present the property as a read-only property when it’s used outside the structure’s definition.
     // If you create a TrackedString instance and modify its string value a few times,
     // you can see the numberOfEdits property value update to match the number of modifications:
@@ -315,8 +325,10 @@ func _26_AccessControl() {
     
     // Although you can query the current value of the numberOfEdits property from within another source file,
     // you can’t modify the property from another source file.
+    
     // This restriction protects the implementation details of the TrackedString edit-tracking functionality,
     // while still providing convenient access to an aspect of that functionality.
+    
     // Note that you can assign an explicit access level for both a getter and a setter if required.
     // The example below shows a version of the TrackedString structure in which the structure is defined with an explicit access level of public.
     // The structure’s members (including the numberOfEdits property) therefore have an internal access level by default.
@@ -352,7 +364,7 @@ func _26_AccessControl() {
     // you must explicitly provide a public no-argument initializer yourself as part of the type’s definition.
 
     // Default Memberwise Initializers for Structure Types
-    // The default memberwise initializer for a structure type is considered private if any of the structure’s stored properties are private.
+    // IMPORTANT: 👉 The default memberwise initializer for a structure type is considered private if any of the structure’s stored properties are private.
     // Likewise, if any of the structure’s stored properties are file private, the initializer is file private.
     // Otherwise, the initializer has an access level of internal.
     // As with the default initializer above,
