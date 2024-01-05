@@ -45,6 +45,8 @@ func _19_Memory_Safety()
     // Before you can fix the conflicting access, you have to determine what it was intended to do.
 
     // Note
+    // ⁉️ the comment is not 100% clear
+    
     // If you’ve written concurrent or multithreaded code, conflicting access to memory might be a familiar problem. However, the conflicting access discussed here can happen on a single thread and doesn’t involve concurrent or multithreaded code.
     // If you have conflicting access to memory from within a single thread, Swift guarantees that you’ll get an error at either compile time or runtime. For multithreaded code,
     // use Thread Sanitizer [https://developer.apple.com/documentation/xcode/diagnosing_memory_thread_and_crash_issues_early] to help detect conflicting access across threads.”
@@ -55,6 +57,10 @@ func _19_Memory_Safety()
     
     // There are three characteristics of memory access to consider in the context of conflicting access: whether the access is a read or a write, the duration of the access,
     // and the location in memory being accessed. Specifically, a conflict occurs if you have two accesses that meet all of the following conditions:
+
+    // ⁉️ atomic and nonatomic access concept, needs revision, and how atomic only synchronizes access, but does not guarntee thread safety
+    //
+
 
     // At least one is a write access or a nonatomic access.
     // They access the same location in memory.”

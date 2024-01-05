@@ -2,9 +2,15 @@ import Foundation
 
 //_19_OptionalChaining()
 
-Closures3().demo7()
+//Closures3().demo7()
 
-RunLoop.main.run()
+import Foundation
+
+// RunLoop.main.run()
+
+private struct SomePublicClass {
+    public let somePublicProperty: Int
+}
 
 /*
 _01_aboutSwift
@@ -94,6 +100,9 @@ _38_DocumentRevisionHistory
  */
 
 
+print("Finished")
 
 
+let soc = SomeOpenClass()
 
+print(soc.someInternalProperty)
